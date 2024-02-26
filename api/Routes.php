@@ -17,11 +17,19 @@ Route::post( $base_url . "/api/registrasi", function () {
 });
 
 /**
- * api auth user
+ * api auth registrasi user
  */
 Route::post( $base_url . "/api/auth/registrasi", function () {
     $controller = new AuthController();
     $controller->registrasi();
+});
+
+/**
+ * api auth login user
+ */
+Route::post( $base_url . "/api/auth/login", function () {
+    $controller = new AuthController();
+    $controller->login();
 });
 
 
