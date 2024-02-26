@@ -8,9 +8,9 @@ Request Body :
 
 ```json
 {
-  "name": "Ronaldo",
-  "email": "ronaldo@gmail.com",
-  "password": "ronaldo"
+  "name": "Ronaldo", // required
+  "email": "ronaldo@gmail.com", // required
+  "password": "ronaldo" // required
 }
 ```
 
