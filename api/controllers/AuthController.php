@@ -23,8 +23,8 @@ class AuthController
         }
 
         // validasi email
-        $model_users = new Users();
-        $validasi_email = $model_users->findEmail($request['email']);
+        $users = new Users();
+        $validasi_email = $users->findEmail($request['email']);
         if (is_array($validasi_email)) {
             echo json_encode(['message' => 'Email sudah digunakan']);
             http_response_code(409); // Conflict
@@ -40,12 +40,12 @@ class AuthController
         ];
 
         // simpan data
-        $result = $model_users->registrasi($form_data);
+        $result = $users->registrasi($form_data);
 
         // response
         if ($result) {
-            unset($result);
-            
+            // key password tidak perlu di response
+            unset($result['password']);
             echo json_encode([
                 'message' => 'Registrasi berhasil',
                 'data' => $result

@@ -32,7 +32,5 @@ Route::post( $base_url . "/api/auth/login", function () {
     $controller->login();
 });
 
-
-
-// Add more routes here
+// tambahkan lebih banyak route disini
 Route::run();
